@@ -1,10 +1,15 @@
 package com.example.group9_hexgame.Controllers;
 
-public class GameController {
-    public void chanceCurrentPlayer(){
+import com.example.group9_hexgame.Models.Player;
 
+public class GameController {
+    private Player chanceCurrentPlayer(){
+        return new Player();
     }
     public void putStone(){
 
+    }
+    private boolean chackeIfPlayerWon() {
+        return false;
     }
 }

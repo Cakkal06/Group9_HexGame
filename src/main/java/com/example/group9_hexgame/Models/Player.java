@@ -5,10 +5,19 @@ import javafx.scene.paint.Color;
 public class Player {
     private Color playerColor;
     private String name;
-
-    public void Player(Color color,String name){
-        this.playerColor=color;
-        this.name = name;
+    public Color getPlayerColor() {
+        return playerColor;
     }
 
+    public void setPlayerColor(Color playerColor) {
+        this.playerColor = playerColor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
