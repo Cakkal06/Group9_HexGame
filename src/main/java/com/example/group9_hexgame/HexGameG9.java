@@ -12,5 +12,4 @@ public class HexGameG9 extends Application {
     public void start(Stage stage) throws Exception {
         MenuView.stageMenu.show();
     }
-
 }

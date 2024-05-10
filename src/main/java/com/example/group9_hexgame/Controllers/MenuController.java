@@ -10,10 +10,13 @@ import javafx.stage.Stage;
 import static com.example.group9_hexgame.HexGameG9.menuStage;
 
 public class MenuController {
-    public void openGameArea(){
+    public void openGameArea() {
         GameView.stageGame.show();
+        
     }
-    public void openSettings(){
+
+    public void openSettings() {
         SettingsView.stageSettings.show();
     }
+
 }

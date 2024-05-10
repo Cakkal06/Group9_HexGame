@@ -1,15 +1,15 @@
 package com.example.group9_hexgame.Models;
-
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-public class Grid {
+public class Grid extends javafx.scene.layout.Pane {
     int size;
     boolean isBaseOfPlayerA;
     boolean isBaseOfPlayerB;
-    Player playerOnGrid;
+    public Player playerOnGrid;
     Color gridColor= Color.WHITE;
+
     public void drawGrid(){
+        if (playerOnGrid!=null) playerOnGrid.getPlayerColor();
 
     }
 }
