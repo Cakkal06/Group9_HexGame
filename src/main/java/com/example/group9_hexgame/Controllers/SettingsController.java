@@ -7,16 +7,15 @@ import javafx.scene.control.Menu;
 import javafx.scene.paint.Color;
 
 public class SettingsController {
-    public void changePlayerName(Player p,String n){
+    public static void setPlayerProperties(Player p,String n, Color c){
         p.setName(n);
-    }
-    public void changePlayerColor(Player p, Color c){
         p.setPlayerColor(c);
     }
     public void setMapSize(int s){
         Game.mapSize=s;
     }
-    public void closeSettingsView(){
+    public static void  closeSettingsView(){
+        MenuView.setMenuView();
         MenuView.stageMenu.show();
     }
 
