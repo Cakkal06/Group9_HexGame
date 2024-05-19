@@ -7,16 +7,19 @@ import com.example.group9_hexgame.Views.SettingsView;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static com.example.group9_hexgame.HexGameG9.menuStage;
+import static com.example.group9_hexgame.HexGameG9.globalStage;
 
 public class MenuController {
-    public void openGameArea() {
+    public static void openGameArea() {
+        GameView.setGameView();
         GameView.stageGame.show();
         
     }
 
-    public void openSettings() {
+    public static void openSettings() {
+        SettingsView.setSettingsView();
         SettingsView.stageSettings.show();
+
     }
 
 }
