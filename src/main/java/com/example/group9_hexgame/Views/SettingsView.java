@@ -1,5 +1,6 @@
 package com.example.group9_hexgame.Views;
 
+import com.example.group9_hexgame.Controllers.GameController;
 import com.example.group9_hexgame.Controllers.SettingsController;
 import com.example.group9_hexgame.HexGameG9;
 import com.example.group9_hexgame.Models.Game;
@@ -19,6 +20,9 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyCombination;
+
+import java.util.Set;
+
 
 public class SettingsView {
     public static Stage stageSettings = HexGameG9.globalStage;
@@ -70,7 +74,8 @@ public class SettingsView {
 
         mapSizeScrollBar.valueProperty().addListener((observable, oldValue, newValue) -> {
             valueLabel.setText(String.valueOf((int) newValue.intValue()) + "x" + String.valueOf((int) newValue.intValue()));
-            Game.mapSize = newValue.intValue();
+            
+            SettingsController.setMapSize(newValue.intValue());
         });
 
         mapSettingsVBox.getChildren().addAll(logotxt,mapSizeLabel, valueLabel, mapSizeScrollBar);
@@ -117,14 +122,14 @@ public class SettingsView {
         return playerBox;
     }
 
-    private static void setCloseButton(BorderPane root) {
+     static void setCloseButton(BorderPane root) {
         Button closeButton = new Button("Kapat");
         closeButton.setStyle("-fx-font-size: 24px; -fx-background-color: #3279de; -fx-text-fill: white;");
         closeButton.setOnMouseEntered(e->closeButton.setCursor(Cursor.HAND));
         closeButton.setPadding(new Insets(10));
 
         closeButton.setOnAction(e -> {
-            SettingsController.closeSettingsView();
+            GameController.closeGameArea();//?
         });
 
         HBox buttonHbx = new HBox();

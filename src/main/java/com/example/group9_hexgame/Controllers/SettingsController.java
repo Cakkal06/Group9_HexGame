@@ -3,7 +3,7 @@ package com.example.group9_hexgame.Controllers;
 import com.example.group9_hexgame.Models.Game;
 import com.example.group9_hexgame.Models.Player;
 import com.example.group9_hexgame.Views.MenuView;
-import javafx.scene.control.Menu;
+
 import javafx.scene.paint.Color;
 
 public class SettingsController {
@@ -11,7 +11,7 @@ public class SettingsController {
         p.setName(n);
         p.setPlayerColor(c);
     }
-    public void setMapSize(int s){
+    public static void setMapSize(int s){
         Game.mapSize=s;
     }
     public static void  closeSettingsView(){

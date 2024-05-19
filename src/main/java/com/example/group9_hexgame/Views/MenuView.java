@@ -7,11 +7,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -22,8 +20,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import java.time.InstantSource;
 
 public class MenuView {
     public static Stage stageMenu = HexGameG9.globalStage;
@@ -44,6 +40,8 @@ public class MenuView {
                 0, 0, 1, 0, true, CycleMethod.NO_CYCLE, new Stop(0, Color.web("#ffd700")), new Stop(1, Color.RED)
         );
         logotxt.setFill(gradient);
+
+
         //create play button
         Button playButton = new Button("Oyna");
         playButton.setStyle(buttonStyle);
@@ -77,6 +75,7 @@ public class MenuView {
         VBox vBox = new VBox( logotxt, playButton, settingsButton, closeButton);
         vBox.setSpacing(20);
         vBox.setAlignment(Pos.CENTER);
+        vBox.setPadding(new Insets(0,0,150,0));
 
 
         // add VBox to root
