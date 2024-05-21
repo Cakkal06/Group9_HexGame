@@ -138,6 +138,5 @@ public class SettingsView {
         buttonHbx.setPadding(new Insets(0, 0, 60, 0));
 
         root.setBottom(buttonHbx);
-
     }
 }
