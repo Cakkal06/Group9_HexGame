@@ -12,20 +12,26 @@ public class Game {
     public static int amountOfRound=1;
     static public Player playerA = new Player("Player A",Color.BLUE);
     static public Player playerB = new Player("Player B" ,Color.RED);
-    static public Grid[][] grids = new Grid[mapSize][mapSize];
-    static public Player currentPlayer=playerA;
 
-    public static void getGrids(){
 
-//        for (int i = 0; i < mapSize; i++) {
-//            for (int j = 0; j < mapSize; j++) {
-//                grids[i][j] = new Grid(1,1,1);
-//                if(i==0&&i==mapSize-1) grids[i][j].isBaseOfPlayerA = true;
-//                if(j==0&&j==mapSize-1) grids[i][j].isBaseOfPlayerB = true;
-//            }
-//        }
-        currentPlayer = playerA;
+    //
+    private static Grid[][] grids;
+
+    public static void initializeGrid(int gridSize) {
+        grids = new Grid[gridSize][gridSize];
     }
+
+    public static void setGrid(Grid hexagon, int row, int col) {
+        grids[row][col] = hexagon;
+    }
+
+    public static Grid[][] getGrid() {
+        return grids;
+    }
+    //
+
+
+    static public Player currentPlayer=playerA;
 
 
 

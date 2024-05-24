@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import static com.example.group9_hexgame.Models.Game.currentPlayer;
 
 public class GameView {
-
+    public static VBox sum = new VBox();
     public static Stage stageGame = HexGameG9.globalStage;          //acaba sürekli yeni stageler üretmek yerine her stage bir gtage gösterne nasıl olur
     public static void setGameView(){
 
@@ -34,8 +34,10 @@ public class GameView {
         root.setCenter(gameAreaPane);
 
         // create summary
-        getSum(root);
 
+        getSum();
+
+        root.setTop(sum);
 
         // create exit button
 
@@ -51,10 +53,11 @@ public class GameView {
         stageGame.setFullScreen(true);
         stageGame.setFullScreenExitHint("");
         stageGame.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+
     }
 
-    public static void getSum(BorderPane root) {
-        VBox sum = new VBox();
+    public static void getSum() {
+        sum.getChildren().clear();
         sum.setSpacing(10);
         //oynayan oyuncu bilgisi
         Label currentPlayerLbl = new Label("Oyanyan oyuncu :"+ currentPlayer.getName());
@@ -72,6 +75,10 @@ public class GameView {
         sum.setAlignment(Pos.CENTER);
         sum.setPadding(new Insets(10,10,10,10));
 
-        root.setTop(sum);
+
+
+    }
+    public static void getSum(VBox sum){
+
     }
 }
